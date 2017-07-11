@@ -1,0 +1,31 @@
+{
+  "name": "vending-machine",
+  "version": "1.0.0",
+  "description": "The Iron Yard Daily Project: Test and build a vending machine",
+  "main": "api.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickmurdock/vending-machine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rickmurdock/vending-machine/issues"
+  },
+  "homepage": "https://github.com/rickmurdock/vending-machine#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0"
+  }
+}
