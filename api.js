@@ -63,13 +63,8 @@ app.post("/api/customer/items/:itemId/purchases", (req, res) => {
             }
         });
       }
-
     }
   });
-    
-
-  // vendingData.items.push(itemData);
-  // res.status(200).send("item is purchased");
 }); 
 
 app.get("/api/vendor/purchases", (req, res) => {
@@ -92,7 +87,7 @@ app.post("/api/vendor/items", (req, res) => {
   res.status(200).send("item is added");
 }); 
 
-app.put("api/vendor/items/:itemId", (req, res) => {
+app.put("/api/vendor/items/:itemId", (req, res) => {
   // let itemId = req.params.itemId;
   // let itemData = req.body;
   // vendingData.items.forEach(function(item) {
