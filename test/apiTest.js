@@ -25,10 +25,13 @@ describe("POST /api/customer/items/:itemId/purchases", function() {
             "money_given": 130
         }
     request(apiApp)
-      .post("/api/customer/items/:itemId/purchases")
+      .post("/api/customer/items/2/purchases")
       .send(newItem)
       .expect(200)
-      .expect("item is added")
+      .expect(function(res) {
+        assert.equal(res.body["status"], "success");
+        assert.equal(res.body.data.message, "ENJOY YOUR PURCHASE");
+      })
       .end(done);
   });
 });
