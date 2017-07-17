@@ -14,6 +14,10 @@ describe("GET /api/customer/items", function() {
       .expect("Content-Type", "application/json; charset=utf-8")
       .expect(function(res) {
         assert.equal(res.body["status"], "success");
+        res.body.data[0].id.should.be.above(-1);
+        assert.equal(res.body.data[0].description, "Corn chips");
+        res.body.data[0].cost.should.be.above(0);
+        res.body.data[0].quantity.should.be.above(-1);
       })
       .end(done);
   });
@@ -31,6 +35,9 @@ describe("POST /api/customer/items/:itemId/purchases", function() {
       .expect(function(res) {
         assert.equal(res.body["status"], "success");
         assert.equal(res.body.data.message, "ENJOY YOUR PURCHASE");
+        assert.equal(res.body.data.money_given, 130);
+        assert.equal(res.body.data.money_required, 35);
+        assert.equal(res.body.data.change_returned, 95);
       })
       .end(done);
   });
@@ -44,7 +51,8 @@ describe("GET /api/vendor/purchases", function() {
       .expect("Content-Type", "application/json; charset=utf-8")
       .expect(function(res) {
         assert.equal(res.body["status"], "success");
-        // res.body["data"].should.be.above(0);
+        res.body.data[0].id.should.be.above(0);
+        res.body.data[0].description.should.not
       })
       .end(done);
   });
